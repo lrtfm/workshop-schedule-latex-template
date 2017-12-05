@@ -1,0 +1,174 @@
+\documentclass[UTF8,openany]{book}
+
+\usepackage[heading=true]{ctex}
+%\usepackage{ctexcap}
+\usepackage{titletoc}
+\usepackage{caption}
+\usepackage[table]{xcolor}
+\usepackage{geometry}
+\usepackage[unicode=true, colorlinks=true,%
+            linkcolor=blue, pdfborder={0 0 0}]{hyperref}
+\usepackage{multirow, makecell}
+\usepackage{bigstrut}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{bm}
+\usepackage[final]{pdfpages}
+\usepackage{hhline}
+\usepackage{fancyhdr}
+\usepackage{dashrule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% format define begin %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper,left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+  \hbox{}
+  \vspace*{\fill}
+  \begin{center}
+    \Large\quad
+  \end{center}
+  \vspace{\fill}
+  \thispagestyle{empty}
+  \newpage
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\thispagestyle{fancy}}
+
+%\setmainfont{Times New Roman}
+\renewcommand{\normalsize}{\zihao{-4}}
+
+\ifx\ctexset\undefined
+  \CTEXsetup[name={,},number={\chinese{chapter}},%
+    format={\center\heiti\zihao{2}},pagestyle=empty]{chpter}
+\else
+  \ctexset {
+    chapter = {
+      name = {,},
+      format = \center\heiti\zihao{2},
+      pagestyle = empty,
+      number = \chinese{chapter},
+      %beforeskip= 10pt,
+      %afterskip= 10pt,
+    }
+  }
+\fi
+%\makeatletter
+%\ctexset{chapter/break = {\if@openright\cleardoublepage\else\clearpage\fi}}
+%\makeatother
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+
+\colorlet{npucolora}{gray!80}
+\colorlet{npucolorb}{gray!20}
+
+\newcommand{\nputitlelen}{9cm}
+\newcommand{\npureporterlen}{1.5cm}
+\newcommand{\cell}[1]{\minitab[c]{#1}}
+\newcommand{\npucell}[2][\nputitlelen]{\minitab[@{}p{#1}<{\centering}@{}]{#2}}
+
+\newcommand{\npuhalfline}{\hhline{|-|-|-|}}
+
+\newcommand{\npudate}[1]{%
+  \rowcolor{npucolora}\multicolumn{4}{|c|}{#1}\\\hline}
+\newcommand{\npuhead}{%
+  \rowcolor{npucolorb} 时间 & 报告人 & 题目 & 主持人 \\\hline}
+\newcommand{\npuevent}[3]{%
+  #1 & \multicolumn{2}{c|}{#2} & #3 \\\hline}
+\newcommand{\nputeabreak}[2]{%
+  \rowcolor{npucolorb} #1 & \multicolumn{3}{c|}{#2}\\\hline}
+\newcommand{\npureport}[3]{%
+  #1 & \npucell[1.5cm]{#2} & \npucell[\nputitlelen]{#3} &}
+\newcommand{\npuhost}[2]{%
+  \ifcase#1 \\\npuhalfline \or #2\\\hline%
+  % \else \multirow{#1}*{#2}\\\hline%
+  \else \multirowcell{#1}{#2}\\\hline%
+  \fi%
+}
+
+\newcolumntype{T}{>{\columncolor{npucolorb}}c}
+\newcolumntype{M}{p{\npureporterlen}<{\centering}|p{\nputitlelen}<{\centering}}
+% \renewcommand\arraystretch{1.4}
+
+\newenvironment{nputable}{%
+  \begin{table}[h!]\begin{center}\bf\begin{tabular}{|T|M|c|}}{%
+  \end{tabular}\end{center}\end{table}}
+
+\newenvironment{desc}[1][]{\begin{list}{#1}{%
+  \renewcommand{\makelabel}[1]{\hfil{{\bf ##1}}}}}{\end{list}}
+
+%\def\npubreak{\noindent\hdashrule{\textwidth}{1pt}{4mm}\vskip30pt}
+\def\npubreak{\newpage}
+\newcommand{\npudetail}[5]{%
+  \begin{desc}%
+    \item[报告人] {\bf #1} (#2)
+    \item[报告题目]\hfill\\ 
+      {\bf #3}
+    \item[报告摘要]\hfill\\
+      #4
+    \item[报告人简介] \hfill\\
+      #5
+  \end{desc}\npubreak
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% format define end %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% insert cover
+% \includepdf[pages=-,width=\paperwidth,height=\paperheight]{front.pdf}%
+
+\begin{titlepage}
+  \vspace*{5mm}
+  \begin{center}
+    \zihao{3}
+    {\lishu\zihao{-0} 第一届啥啥啥啥及其\\[5mm]应用研讨会}\\[15mm]
+    {\bf\zihao{-0}{程\vskip0mm 序\vskip8mm 册}}\\\vfill
+    {\bf 主办单位}\\
+    {某某某大学}\\[3mm]
+  {\bf 承办单位}\\
+{某某某学院}\\{某某某某中心}\\[8mm]
+  {\bf 12.11 -- 12.14}\\
+  {\bf  中国$\bullet$陕西$\bullet$西安}\\\vskip20mm
+  \end{center}
+\end{titlepage}
+
+\chapter*{会议信息}
+\label{cha:lun_tan_jian_jie_}
+    第一届啥啥啥啥及其应用研讨会由某某某大学主办, 某某某学院、某某某某中心
+    承办, 将于20XX年XX月XX日至XX日在XXXX国际会议中心举行。会议旨在汇聚海内
+    外专家学者，搭建科学研究与学科发展的交流平台，聚焦国际学术前沿及研究热
+    点，促进相关领域的交叉与融合。
+\vskip25pt
+\begin{desc}
+  \item[组委会成员:]
+    张三、李四、王五
+  \item[会议联系人:] 张三 (zhangsan@xxxx.edu)
+  \item[会议网址:] http://www.xxxx.edu/\textasciitilde xxxx/xxxx
+  \item[会议地点:] 某某某大学会议中心第一会议室 
+\end{desc}
+
+\frontmatter
+%\pagenumbering{Roman}
+%\tableofcontents
+\mainmatter
+
+
+\chapter{会议日程安排}
+\label{cha:lun_tan_ri_cheng_an_pai_}
+\input{table.tex}
+
+\cleardoublepage
+%\thispagestyle{empty}
+\chapter{大会报告及报告专家简介}
+\label{cha:da_hui_bao_gao_ji_bao_gao_zhuan_jia_jian_jie_}
+\input{reports.tex}
+
+\backmatter
+% insert back cover
+% \includepdf[pages=-,width=\paperwidth,height=\paperheight]{back.pdf}%
+\end{document}

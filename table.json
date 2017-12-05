@@ -1,0 +1,65 @@
+[
+	{"type": "date", "info": "12月11日: 报到"},
+	{"type": "date", "info": "12月12日上午: 学术活动"},
+	{"type": "head"},
+	{
+		"type": "event",
+		"info": "开幕式",
+		"host": "王五",
+		"time": "08:40--09:00"
+	},
+	{
+		"type": "reports",
+		"host": "张三" ,
+		"reports": [1, 2, 3],
+		"times":["09:00--09:30", "09:30--10:00", "10:00--10:30"]
+	},
+	{
+		"type": "teabreak",
+		"info": "茶歇",
+		"time": "10:30--11:00"
+	},
+	{
+		"type": "reports",
+		"host": "张三" ,
+		"reports": [1, 2],
+		"times":["11:00--11:30", "11:30--12:00"]
+	},
+	{
+		"type": "teabreak",
+		"info": "午餐",
+		"time": "12:00--14:00"
+	},
+	{"type": "newtable"},
+	{"type": "date", "info": "12月12日下午: 学术活动"},
+	{"type": "head"},
+	{
+		"type": "reports",
+		"host": "李四" ,
+		"reports": [1, 2, 3],
+		"times":["14:00--14:30", "14:30--15:00", "15:00--15:30"]
+	},
+	{
+		"type": "teabreak",
+		"info": "茶歇",
+		"time": "15:30--16:00"
+	},
+	{
+		"type": "reports",
+		"host": "李四" ,
+		"reports": [1],
+		"times":["16:00--16:30"]
+	},
+	{
+		"type": "event",
+		"info": "闭幕式",
+		"host": "王五",
+		"time": "16:30--17:00"
+	},
+	{
+		"type": "teabreak",
+		"info": "晚餐",
+		"time": "18:00--20:00"
+	},
+	{"type": "date", "info": "12月13日: 自由讨论交流"}
+]
