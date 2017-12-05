@@ -6,7 +6,7 @@
         "enname": "San ZHANG",
         "enschool": "X University",
         "profile":"某大学教授",
-        "title": "偏微分方程求解XXXXXXX XX XX xxx ",
+        "title": "偏微分方程求解",
         "abstract": "介绍求解偏微分方程的主流数值方法"       
     },
     {
@@ -16,7 +16,7 @@
         "enname": "Si LI",
         "enschool": "XX University",
         "profile":"某某大学教授",
-        "title": "常微分方程数值解法 XXXXXXX XX XX xxx ",
+        "title": "常微分方程数值解法",
         "abstract": "介绍求解常微分方程的数值方法"
     },
     {
