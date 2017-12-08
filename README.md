@@ -1,5 +1,5 @@
 # 小型讨论会 \LaTeX 模板
-
+下载地址: https://github.com/lrtfm/workshop-schedule-latex-template
 ## 依赖
 - TeXLive
 - Python 2.7
